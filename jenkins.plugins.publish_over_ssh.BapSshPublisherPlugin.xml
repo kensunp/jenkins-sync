@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jenkins.plugins.publish__over__ssh.BapSshPublisherPlugin_-Descriptor plugin="publish-over-ssh@1.17">
+  <hostConfigurations>
+    <jenkins.plugins.publish__over__ssh.BapSshHostConfiguration>
+      <name>testvm</name>
+      <hostname>192.168.1.63</hostname>
+      <username>root</username>
+      <secretPassword>mhy1oWzExXdGx5CQ+kvt4w==</secretPassword>
+      <remoteRootDir>/root/save</remoteRootDir>
+      <port>22</port>
+      <commonConfig class="jenkins.plugins.publish_over_ssh.BapSshCommonConfiguration">
+        <secretPassphrase>mhy1oWzExXdGx5CQ+kvt4w==</secretPassphrase>
+        <key></key>
+        <keyPath></keyPath>
+        <disableAllExec>false</disableAllExec>
+      </commonConfig>
+      <timeout>300000</timeout>
+      <overrideKey>true</overrideKey>
+      <disableExec>false</disableExec>
+      <keyInfo>
+        <secretPassphrase>MlTaxl0z/JF6vzzD1cU8xTCQYDBECQ5rQCC2c09fc/I=</secretPassphrase>
+        <key></key>
+        <keyPath></keyPath>
+      </keyInfo>
+      <jumpHost></jumpHost>
+      <proxyType></proxyType>
+      <proxyHost></proxyHost>
+      <proxyPort>0</proxyPort>
+      <proxyUser></proxyUser>
+      <proxyPassword></proxyPassword>
+    </jenkins.plugins.publish__over__ssh.BapSshHostConfiguration>
+    <jenkins.plugins.publish__over__ssh.BapSshHostConfiguration>
+      <name>vm239</name>
+      <hostname>192.168.1.239</hostname>
+      <username>root</username>
+      <secretPassword>mhy1oWzExXdGx5CQ+kvt4w==</secretPassword>
+      <remoteRootDir>/root/save</remoteRootDir>
+      <port>22</port>
+      <commonConfig class="jenkins.plugins.publish_over_ssh.BapSshCommonConfiguration" reference="../../jenkins.plugins.publish__over__ssh.BapSshHostConfiguration/commonConfig"/>
+      <timeout>300000</timeout>
+      <overrideKey>true</overrideKey>
+      <disableExec>false</disableExec>
+      <keyInfo>
+        <secretPassphrase>MlTaxl0z/JF6vzzD1cU8xTCQYDBECQ5rQCC2c09fc/I=</secretPassphrase>
+        <key></key>
+        <keyPath></keyPath>
+      </keyInfo>
+      <jumpHost></jumpHost>
+      <proxyType></proxyType>
+      <proxyHost></proxyHost>
+      <proxyPort>0</proxyPort>
+      <proxyUser></proxyUser>
+      <proxyPassword></proxyPassword>
+    </jenkins.plugins.publish__over__ssh.BapSshHostConfiguration>
+  </hostConfigurations>
+  <commonConfig reference="../hostConfigurations/jenkins.plugins.publish__over__ssh.BapSshHostConfiguration/commonConfig"/>
+  <defaults class="jenkins.plugins.publish_over_ssh.options.SshPluginDefaults"/>
+</jenkins.plugins.publish__over__ssh.BapSshPublisherPlugin_-Descriptor>
