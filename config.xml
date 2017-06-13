@@ -59,7 +59,9 @@
                   <default>
                     <comparator class="hudson.util.CaseInsensitiveComparator"/>
                   </default>
-                  <int>0</int>
+                  <int>1</int>
+                  <string></string>
+                  <string></string>
                 </tree-map>
               </envVars>
             </hudson.slaves.EnvironmentVariablesNodeProperty>
