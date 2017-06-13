@@ -60,9 +60,7 @@
   <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
   <reporters/>
   <publishers/>
-  <buildWrappers>
-    <org.jenkinsci.plugins.mesos.MesosSingleUseSlave plugin="mesos@0.14.1"/>
-  </buildWrappers>
+  <buildWrappers/>
   <prebuilders/>
   <postbuilders/>
   <runPostStepsIfResult>
