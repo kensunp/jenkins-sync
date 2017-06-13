@@ -30,7 +30,7 @@
       <description></description>
       <frameworkName>Jenkins Scheduler</frameworkName>
       <role>*</role>
-      <slavesUser>jenkins</slavesUser>
+      <slavesUser>root</slavesUser>
       <credentialsId></credentialsId>
       <cloudID>6c5f539c-bbeb-4239-99db-4fafd40fa7df</cloudID>
       <checkpoint>true</checkpoint>
@@ -59,9 +59,7 @@
                   <default>
                     <comparator class="hudson.util.CaseInsensitiveComparator"/>
                   </default>
-                  <int>1</int>
-                  <string>JAVA_HOME</string>
-                  <string>/opt/jdk1.7.0_65</string>
+                  <int>0</int>
                 </tree-map>
               </envVars>
             </hudson.slaves.EnvironmentVariablesNodeProperty>
