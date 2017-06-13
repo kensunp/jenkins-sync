@@ -17,7 +17,7 @@
     <locations>
       <hudson.scm.SubversionSCM_-ModuleLocation>
         <remote>svn://192.168.1.58/webapp/背景调查/ewe-bjdc-openApi</remote>
-        <credentialsId></credentialsId>
+        <credentialsId>dd52da5c-a47d-49cd-b5de-698f94d6f575</credentialsId>
         <local>.</local>
         <depthOption>infinity</depthOption>
         <ignoreExternalsOption>false</ignoreExternalsOption>
