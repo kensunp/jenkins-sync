@@ -11,7 +11,50 @@
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
-  <builders/>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>curl -X POST -H &quot;Accept: application/json&quot; -H &quot;Content-Type: application/json&quot; \
+192.168.1.200:8080/v2/apps -d &apos;{
+  &quot;id&quot;: &quot;/testjenkins,
+  &quot;cmd&quot;: null,
+  &quot;cpus&quot;: 1,
+  &quot;mem&quot;: 128,
+  &quot;disk&quot;: 0,
+  &quot;instances&quot;: 0,
+  &quot;acceptedResourceRoles&quot;: [
+    &quot;*&quot;
+  ],
+  &quot;container&quot;: {
+    &quot;type&quot;: &quot;DOCKER&quot;,
+    &quot;volumes&quot;: [],
+    &quot;docker&quot;: {
+      &quot;image&quot;: &quot;192.168.1.62:5000/ewe/nginx:1.8.1&quot;,
+      &quot;network&quot;: &quot;BRIDGE&quot;,
+      &quot;portMappings&quot;: [
+        {
+          &quot;containerPort&quot;: 80,
+          &quot;hostPort&quot;: 0,
+          &quot;servicePort&quot;: 10000,
+          &quot;protocol&quot;: &quot;tcp&quot;,
+          &quot;labels&quot;: {}
+        }
+      ],
+      &quot;privileged&quot;: false,
+      &quot;parameters&quot;: [],
+      &quot;forcePullImage&quot;: true
+    }
+  },
+  &quot;portDefinitions&quot;: [
+    {
+      &quot;port&quot;: 10000,
+      &quot;protocol&quot;: &quot;tcp&quot;,
+      &quot;name&quot;: &quot;default&quot;,
+      &quot;labels&quot;: {}
+    }
+  ]
+}&apos;</command>
+    </hudson.tasks.Shell>
+  </builders>
   <publishers/>
   <buildWrappers/>
 </project>
