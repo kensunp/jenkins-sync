@@ -11,11 +11,7 @@
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
-  <builders>
-    <hudson.tasks.Shell>
-      <command>top</command>
-    </hudson.tasks.Shell>
-  </builders>
+  <builders/>
   <publishers/>
   <buildWrappers/>
 </project>
