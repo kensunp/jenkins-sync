@@ -32,8 +32,7 @@
     <ignoreDirPropChanges>false</ignoreDirPropChanges>
     <filterChangelog>false</filterChangelog>
   </scm>
-  <assignedNode>ewezx</assignedNode>
-  <canRoam>false</canRoam>
+  <canRoam>true</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
@@ -96,9 +95,7 @@
       </delegate>
     </jenkins.plugins.publish__over__ssh.BapSshPublisherPlugin>
   </publishers>
-  <buildWrappers>
-    <org.jenkinsci.plugins.mesos.MesosSingleUseSlave plugin="mesos@0.14.1"/>
-  </buildWrappers>
+  <buildWrappers/>
   <prebuilders>
     <hudson.tasks.Shell>
       <command>sed -i &apos;s/jdbc\.host=10\.9\.57\.160\:3306/jdbc\.host=192\.168\.1\.10\:3306/&apos; \
