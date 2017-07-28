@@ -122,7 +122,7 @@
       <filterQueue>false</filterQueue>
       <properties class="hudson.model.View$PropertyList"/>
       <jobNames>
-        <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../../clouds/org.jenkinsci.plugins.mesos.MesosCloud/slaveInfos/org.jenkinsci.plugins.mesos.MesosSlaveInfo/nodeProperties/hudson.slaves.EnvironmentVariablesNodeProperty/envVars/tree-map/default/comparator"/>
         <string>taotao-common</string>
         <string>taotao-manager</string>
         <string>taotao-manager-01</string>

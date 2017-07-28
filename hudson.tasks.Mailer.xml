@@ -1,5 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <hudson.tasks.Mailer_-DescriptorImpl plugin="mailer@1.20">
-  <useSsl>false</useSsl>
+  <smtpAuthUsername>kensunp@163.com</smtpAuthUsername>
+  <smtpAuthPassword>T12uMi5dzNl8STD4XqQ7G8Dkx6Wnbr5mWhAwuD6i2bc=</smtpAuthPassword>
+  <smtpHost>smtp.163.com</smtpHost>
+  <useSsl>true</useSsl>
   <charset>UTF-8</charset>
 </hudson.tasks.Mailer_-DescriptorImpl>
