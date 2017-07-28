@@ -71,7 +71,7 @@
                 <remoteDirectory></remoteDirectory>
                 <sourceFiles>**/*.war</sourceFiles>
                 <excludes></excludes>
-                <removePrefix>target/</removePrefix>
+                <removePrefix>taotao-manager-web/target/</removePrefix>
                 <remoteDirectorySDF>false</remoteDirectorySDF>
                 <flatten>false</flatten>
                 <cleanRemote>false</cleanRemote>
