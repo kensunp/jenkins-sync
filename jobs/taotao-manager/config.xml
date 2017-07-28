@@ -67,14 +67,14 @@
                 <remoteDirectory></remoteDirectory>
                 <sourceFiles>**/*.war</sourceFiles>
                 <excludes></excludes>
-                <removePrefix></removePrefix>
+                <removePrefix>target/</removePrefix>
                 <remoteDirectorySDF>false</remoteDirectorySDF>
                 <flatten>false</flatten>
                 <cleanRemote>false</cleanRemote>
                 <noDefaultExcludes>false</noDefaultExcludes>
                 <makeEmptyDirs>false</makeEmptyDirs>
                 <patternSeparator>[, ]+</patternSeparator>
-                <execCommand></execCommand>
+                <execCommand>/root/save/publish.sh bjdcApi 8080 /opt/tomcat7</execCommand>
                 <execTimeout>120000</execTimeout>
                 <usePty>false</usePty>
                 <useAgentForwarding>false</useAgentForwarding>
