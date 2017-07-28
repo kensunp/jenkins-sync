@@ -125,6 +125,7 @@
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
         <string>taotao-common</string>
         <string>taotao-manager</string>
+        <string>taotao-manager-01</string>
         <string>taotao-parent</string>
       </jobNames>
       <jobFilters/>
