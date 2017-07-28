@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <hudson.tasks.Mailer_-DescriptorImpl plugin="mailer@1.20">
+  <hudsonUrl>http://192.168.1.212:8080/</hudsonUrl>
   <smtpAuthUsername>kensunp@163.com</smtpAuthUsername>
   <smtpAuthPassword>T12uMi5dzNl8STD4XqQ7G8Dkx6Wnbr5mWhAwuD6i2bc=</smtpAuthPassword>
   <replyToAddress>kensunp@163.com</replyToAddress>
