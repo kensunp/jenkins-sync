@@ -78,7 +78,7 @@
                 <noDefaultExcludes>false</noDefaultExcludes>
                 <makeEmptyDirs>false</makeEmptyDirs>
                 <patternSeparator>[, ]+</patternSeparator>
-                <execCommand>/root/save/publish.sh bjdcApi 8080 /opt/tomcat7</execCommand>
+                <execCommand>/root/save/publish.sh taotao-manager-web 8080 /opt/tomcat7</execCommand>
                 <execTimeout>120000</execTimeout>
                 <usePty>false</usePty>
                 <useAgentForwarding>false</useAgentForwarding>
