@@ -1,9 +1,38 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <maven2-moduleset plugin="maven-plugin@2.7.1">
+  <actions/>
+  <description></description>
   <keepDependencies>false</keepDependencies>
-  <properties/>
-  <scm class="hudson.scm.NullSCM"/>
-  <canRoam>false</canRoam>
+  <properties>
+    <jenkins.model.BuildDiscarderProperty>
+      <strategy class="hudson.tasks.LogRotator">
+        <daysToKeep>-1</daysToKeep>
+        <numToKeep>4</numToKeep>
+        <artifactDaysToKeep>-1</artifactDaysToKeep>
+        <artifactNumToKeep>-1</artifactNumToKeep>
+      </strategy>
+    </jenkins.model.BuildDiscarderProperty>
+  </properties>
+  <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.7.2">
+    <locations>
+      <hudson.scm.SubversionSCM_-ModuleLocation>
+        <remote>svn://192.168.1.221/sun/taotao-common</remote>
+        <credentialsId>37298336-bd9d-4906-b7e2-cbc2deb2b8c4</credentialsId>
+        <local>.</local>
+        <depthOption>infinity</depthOption>
+        <ignoreExternalsOption>true</ignoreExternalsOption>
+      </hudson.scm.SubversionSCM_-ModuleLocation>
+    </locations>
+    <excludedRegions></excludedRegions>
+    <includedRegions></includedRegions>
+    <excludedUsers></excludedUsers>
+    <excludedRevprop></excludedRevprop>
+    <excludedCommitMessages></excludedCommitMessages>
+    <workspaceUpdater class="hudson.scm.subversion.UpdateUpdater"/>
+    <ignoreDirPropChanges>false</ignoreDirPropChanges>
+    <filterChangelog>false</filterChangelog>
+  </scm>
+  <canRoam>true</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
@@ -20,6 +49,7 @@
   <mavenValidationLevel>-1</mavenValidationLevel>
   <runHeadless>false</runHeadless>
   <disableTriggerDownstreamProjects>false</disableTriggerDownstreamProjects>
+  <blockTriggerWhenBuilding>true</blockTriggerWhenBuilding>
   <settings class="jenkins.mvn.DefaultSettingsProvider"/>
   <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
   <reporters/>
@@ -27,4 +57,10 @@
   <buildWrappers/>
   <prebuilders/>
   <postbuilders/>
+  <runPostStepsIfResult>
+    <name>FAILURE</name>
+    <ordinal>2</ordinal>
+    <color>RED</color>
+    <completeBuild>true</completeBuild>
+  </runPostStepsIfResult>
 </maven2-moduleset>
