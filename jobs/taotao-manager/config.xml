@@ -12,6 +12,25 @@
         <artifactNumToKeep>-1</artifactNumToKeep>
       </strategy>
     </jenkins.model.BuildDiscarderProperty>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.ChoiceParameterDefinition>
+          <name>deploy_env</name>
+          <description>deploy:发布，rollback:回滚</description>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>deploy</string>
+              <string>rollback</string>
+            </a>
+          </choices>
+        </hudson.model.ChoiceParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>version</name>
+          <description>回滚版本号，发布时忽略该参数</description>
+          <defaultValue>0</defaultValue>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
   </properties>
   <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.7.2">
     <locations>
@@ -42,7 +61,6 @@
     <groupId>com.taotao</groupId>
     <artifactId>taotao-manager</artifactId>
   </rootModule>
-  <goals>clean install -DskipTests</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>false</incrementalBuild>
   <ignoreUpstremChanges>false</ignoreUpstremChanges>
@@ -104,7 +122,26 @@
     </jenkins.plugins.publish__over__ssh.BapSshPublisherPlugin>
   </publishers>
   <buildWrappers/>
-  <prebuilders/>
+  <prebuilders>
+    <hudson.tasks.Shell>
+      <command>case $deploy_env in
+	deploy)
+		echo &quot;deploy:$deploy_env&quot;
+		mvn clean install -DskipTests
+		;;
+	rollback)
+		echo &quot;rollback:$deploy_env&quot;
+		echo &quot;version:$version&quot;
+		rm -rf taotao-manager-web/target
+		cp -R ${JENKIN_HOME}/jobs/taotao-manager/builds/${version}/archive/taotao-manager-web/target .
+		pwd &amp;&amp; ls
+		;;
+	*)
+		exit
+		;;
+esac</command>
+    </hudson.tasks.Shell>
+  </prebuilders>
   <postbuilders/>
   <runPostStepsIfResult>
     <name>FAILURE</name>
