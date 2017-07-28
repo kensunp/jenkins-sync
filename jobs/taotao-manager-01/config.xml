@@ -61,7 +61,7 @@
     <hudson.tasks.Shell>
       <command>case $deploy_env in
 	deploy)
-		echo &quot;deploy:$deploy_env&quot;
+		echo &quot;deploy:$deploy_env1&quot;
 		mvn clean install -DskipTests
 		;;
 	rollback)
