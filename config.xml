@@ -124,6 +124,7 @@
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
         <string>taotao-common</string>
+        <string>taotao-parent</string>
       </jobNames>
       <jobFilters/>
       <columns>
