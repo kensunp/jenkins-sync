@@ -12,6 +12,25 @@
         <artifactNumToKeep>-1</artifactNumToKeep>
       </strategy>
     </jenkins.model.BuildDiscarderProperty>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.ChoiceParameterDefinition>
+          <name>deploy_env</name>
+          <description>deploy:发布，rollback:回滚</description>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>deploy</string>
+              <string>rollback</string>
+            </a>
+          </choices>
+        </hudson.model.ChoiceParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>version</name>
+          <description>回滚版本号，发布时忽略该参数</description>
+          <defaultValue>0</defaultValue>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
   </properties>
   <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.7.2">
     <locations>
@@ -40,10 +59,33 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command></command>
+      <command>case $deploy_env in
+	deploy)
+		echo &quot;deploy:$deploy_env&quot;
+		mvn clean install -DskipTests
+		;;
+	rollback)
+		echo &quot;rollback:$deploy_env&quot;
+		echo &quot;version:$version&quot;
+		rm -rf taotao-manager-web/target
+		cp -R ${JENKINS_HOME}/jobs/taotao-manager/builds/${version}/archive/taotao-manager-web/target ./taotao-manager-web/
+		pwd &amp;&amp; ls
+		;;
+	*)
+		exit
+		;;
+esac</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
+    <hudson.tasks.ArtifactArchiver>
+      <artifacts>taotao-manager-web/target/taotao-manager-web.war</artifacts>
+      <allowEmptyArchive>false</allowEmptyArchive>
+      <onlyIfSuccessful>false</onlyIfSuccessful>
+      <fingerprint>false</fingerprint>
+      <defaultExcludes>true</defaultExcludes>
+      <caseSensitive>true</caseSensitive>
+    </hudson.tasks.ArtifactArchiver>
     <jenkins.plugins.publish__over__ssh.BapSshPublisherPlugin plugin="publish-over-ssh@1.17">
       <consolePrefix>SSH: </consolePrefix>
       <delegate>
@@ -63,7 +105,7 @@
                 <noDefaultExcludes>false</noDefaultExcludes>
                 <makeEmptyDirs>false</makeEmptyDirs>
                 <patternSeparator>[, ]+</patternSeparator>
-                <execCommand></execCommand>
+                <execCommand>/root/save/publish.sh taotao-manager-web 8080 /opt/tomcat7</execCommand>
                 <execTimeout>120000</execTimeout>
                 <usePty>false</usePty>
                 <useAgentForwarding>false</useAgentForwarding>
