@@ -38,6 +38,10 @@
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
+  <rootModule>
+    <groupId>com.taotao</groupId>
+    <artifactId>taotao-common</artifactId>
+  </rootModule>
   <goals>clean install -DskipTests</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>false</incrementalBuild>
