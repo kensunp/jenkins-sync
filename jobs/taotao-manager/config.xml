@@ -95,7 +95,7 @@
             <transfers>
               <jenkins.plugins.publish__over__ssh.BapSshTransfer>
                 <remoteDirectory>taotao-manager-web/</remoteDirectory>
-                <sourceFiles>taotao-manager-web/target/*.war</sourceFiles>
+                <sourceFiles>target/*.war</sourceFiles>
                 <excludes></excludes>
                 <removePrefix>target/</removePrefix>
                 <remoteDirectorySDF>false</remoteDirectorySDF>
