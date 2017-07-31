@@ -179,7 +179,7 @@ svn版本号：${SVN_REVISION}&lt;br/&gt;&lt;hr/&gt;
         <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
           <configs class="empty-list"/>
           <projects>Test-tt-manage</projects>
-          <condition>SUCCESS</condition>
+          <condition>ALWAYS</condition>
           <triggerWithNoParameters>false</triggerWithNoParameters>
           <triggerFromChildProjects>false</triggerFromChildProjects>
         </hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
