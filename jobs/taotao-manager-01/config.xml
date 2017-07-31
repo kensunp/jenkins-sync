@@ -62,7 +62,7 @@
       <command>case $deploy_env in
 	deploy)
 		echo &quot;deploy:$deploy_env&quot;
-		mvn1 clean install -DskipTests
+		mvn clean install -DskipTests
 		;;
 	rollback)
 		echo &quot;rollback:$deploy_env&quot;
