@@ -22,7 +22,8 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>curl -I http://192.168.1.239:8080/taotao-manager-web/</command>
+      <command>sleep 20
+curl -I http://192.168.1.239:8080/taotao-manager-web/</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers/>
