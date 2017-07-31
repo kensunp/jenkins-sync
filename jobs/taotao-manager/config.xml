@@ -139,7 +139,7 @@
 		echo &quot;rollback:$deploy_env&quot;
 		echo &quot;version:$version&quot;
 		rm -rf taotao-manager-web/target
-		cp -R ${JENKINS_HOME}/jobs1/taotao-manager/builds/${version}/archive/taotao-manager-web/target ./taotao-manager-web/
+		cp -R ${JENKINS_HOME}/jobs/taotao-manager/builds/${version}/archive/taotao-manager-web/target ./taotao-manager-web/
 		pwd &amp;&amp; ls
 		;;
 	*)
